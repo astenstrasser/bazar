@@ -1,0 +1,22 @@
+name: main-workflow
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+  workflow_dispatch:
+
+jobs:
+  yarn-setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+      - name: Use Node.js 12.18.3
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.18.3
+      - name: Install yarn and run unittest
+        run: |
+          yarn
+          yarn test
+        env:
+          CI: true
