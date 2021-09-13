@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders snapshot 1`] = `
+<div
+  class="shelf"
+>
+  <div
+    class="shelf-item"
+  >
+    <div
+      class="shelf-item--header"
+    >
+      <div
+        class="shelf-item--info"
+      >
+        <h1>
+           
+          PLAYSTATION 5
+           
+        </h1>
+        <p>
+          com 2 controles
+        </p>
+      </div>
+      <div
+        class="shelf-item--price"
+      >
+        R$ 3500
+      </div>
+    </div>
+    <img
+      alt="playstation5"
+      class="shelf-item--picture"
+      src="https://static.nagem.com.br/util/artefatos/produtos/m/n/1063391618262815/525031_1.jpg"
+    />
+  </div>
+  <div
+    class="shelf-item"
+  >
+    <div
+      class="shelf-item--header"
+    >
+      <div
+        class="shelf-item--info"
+      >
+        <h1>
+           
+          MONITOR
+           
+        </h1>
+        <p>
+          36 polegadas
+        </p>
+      </div>
+      <div
+        class="shelf-item--price"
+      >
+        R$ 1300
+      </div>
+    </div>
+    <img
+      alt="monitor dell"
+      class="shelf-item--picture"
+      src="https://m.media-amazon.com/images/I/71m1pA4JteL._AC_SL1500_.jpg"
+    />
+  </div>
+  <div
+    class="shelf-item"
+  >
+    <div
+      class="shelf-item--header"
+    >
+      <div
+        class="shelf-item--info"
+      >
+        <h1>
+           
+          CÂMERA
+           
+        </h1>
+        <p>
+          Nikon D5300
+        </p>
+      </div>
+      <div
+        class="shelf-item--price"
+      >
+        R$ 2000
+      </div>
+    </div>
+    <img
+      alt="imagem de camera fotográfica"
+      class="shelf-item--picture"
+      src="https://cdn.iset.io/assets/46483/produtos/564/5300d1.jpg"
+    />
+  </div>
+</div>
+`;
