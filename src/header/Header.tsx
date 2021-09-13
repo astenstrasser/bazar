@@ -1,11 +1,11 @@
 import React from "react";
 import "./Header.css";
-import logo from "../assets/logo.png";
+import Logo from "../assets/logo.png";
 
 const Header: React.FC = () => {
   return (
     <div className="header">
-      <img className="header-logo" src={logo} alt={"Logo Bahzar"} />
+      <img className="header-logo" src={Logo} alt={"logo bazar"} />
     </div>
   );
 };

@@ -1,9 +1,8 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import App from "./App";
 
-test("renders learn react link", () => {
-  render(<App />);
-  const linkElement = screen.getByText(/produto 1/i);
-  expect(linkElement).toBeInTheDocument();
+test("renders header", () => {
+  const { container } = render(<App />);
+  expect(container.firstChild).toMatchSnapshot();
 });

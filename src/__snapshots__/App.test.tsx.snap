@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders header 1`] = `
+<div
+  class="App"
+>
+  <div
+    class="header"
+  >
+    <img
+      alt="logo bazar"
+      class="header-logo"
+      src="logo.png"
+    />
+  </div>
+  <div>
+    produto 1
+  </div>
+</div>
+`;

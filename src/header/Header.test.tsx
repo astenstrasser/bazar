@@ -1,7 +1,9 @@
+import React from "react";
 import Header from "./Header";
-import { getByAltText, render } from "@testing-library/react";
+import { render } from "@testing-library/react";
 
 test("renders logo", () => {
-  const { getByAltText } = render(<Header />);
-  expect(getByAltText("Logo Bahzar")).toBeInTheDocument();
+  const { getByRole, getByAltText } = render(<Header />);
+  expect(getByRole("img")).toBeInTheDocument();
+  expect(getByAltText("logo bazar")).toBeInTheDocument();
 });
