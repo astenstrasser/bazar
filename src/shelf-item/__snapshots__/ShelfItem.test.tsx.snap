@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders snapshot 1`] = `
+<div
+  class="shelf-item"
+>
+  <div
+    class="shelf-item--header"
+  >
+    <div
+      class="shelf-item--info"
+    >
+      <h1>
+         
+        TEST
+         
+      </h1>
+      <p>
+        test
+      </p>
+    </div>
+    <div
+      class="shelf-item--price"
+    >
+      R$ 
+      1342
+    </div>
+  </div>
+  <img
+    alt="test"
+    class="shelf-item--picture"
+    src="scr"
+  />
+</div>
+`;

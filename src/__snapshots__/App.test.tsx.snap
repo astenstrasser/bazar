@@ -37,7 +37,8 @@ exports[`renders header 1`] = `
         <div
           class="shelf-item--price"
         >
-          R$ 3500
+          R$ 
+          3500
         </div>
       </div>
       <img
@@ -67,7 +68,8 @@ exports[`renders header 1`] = `
         <div
           class="shelf-item--price"
         >
-          R$ 1300
+          R$ 
+          1300
         </div>
       </div>
       <img
@@ -97,7 +99,8 @@ exports[`renders header 1`] = `
         <div
           class="shelf-item--price"
         >
-          R$ 2000
+          R$ 
+          2000
         </div>
       </div>
       <img

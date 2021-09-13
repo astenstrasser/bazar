@@ -1,51 +1,32 @@
 import React from "react";
 import "./Shelf.css";
+import ShelfItem from "../shelf-item/ShelfItem";
 
 const Shelf: React.FC = () => {
   return (
     <div className="shelf">
-      <div className="shelf-item">
-        <div className="shelf-item--header">
-          <div className="shelf-item--info">
-            <h1> {"Playstation 5".toUpperCase()} </h1>
-            <p>com 2 controles</p>
-          </div>
-          <div className="shelf-item--price">R$ 3500</div>
-        </div>
-        <img
-          className="shelf-item--picture"
-          src="https://static.nagem.com.br/util/artefatos/produtos/m/n/1063391618262815/525031_1.jpg"
-          alt="playstation5"
-        />
-      </div>
-      <div className="shelf-item">
-        <div className="shelf-item--header">
-          <div className="shelf-item--info">
-            <h1> {"Monitor".toUpperCase()} </h1>
-            <p>36 polegadas</p>
-          </div>
-          <div className="shelf-item--price">R$ 1300</div>
-        </div>
-        <img
-          className="shelf-item--picture"
-          src="https://m.media-amazon.com/images/I/71m1pA4JteL._AC_SL1500_.jpg"
-          alt="monitor dell"
-        />
-      </div>
-      <div className="shelf-item">
-        <div className="shelf-item--header">
-          <div className="shelf-item--info">
-            <h1> {"Câmera".toUpperCase()} </h1>
-            <p>Nikon D5300</p>
-          </div>
-          <div className="shelf-item--price">R$ 2000</div>
-        </div>
-        <img
-          className="shelf-item--picture"
-          src="https://cdn.iset.io/assets/46483/produtos/564/5300d1.jpg"
-          alt="imagem de camera fotográfica"
-        />
-      </div>
+      <ShelfItem
+        name="Playstation 5"
+        price={3500}
+        description="com 2 controles"
+        image="https://static.nagem.com.br/util/artefatos/produtos/m/n/1063391618262815/525031_1.jpg"
+        image_alt="playstation5"
+      />
+      <ShelfItem
+        name="Monitor"
+        price={1300}
+        description="36 polegadas"
+        image="https://m.media-amazon.com/images/I/71m1pA4JteL._AC_SL1500_.jpg"
+        image_alt="monitor dell"
+      />
+
+      <ShelfItem
+        name="Câmera"
+        price={2000}
+        description="Nikon D5300"
+        image="https://cdn.iset.io/assets/46483/produtos/564/5300d1.jpg"
+        image_alt="imagem de camera fotográfica"
+      />
     </div>
   );
 };
