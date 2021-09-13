@@ -2,14 +2,13 @@
   display: flex;
   justify-content: space-evenly;
   margin: auto;
-  width: 80%;
   flex-wrap: wrap;
 }
 
 .shelf-item {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem;
   max-width: 30rem;
@@ -21,6 +20,10 @@
 @media (max-width: 600px) {
   .shelf-item {
     margin: 1rem 0;
+    width: 100%;
+  }
+  .shelf {
+    width: 95%;
   }
 }
 
@@ -28,6 +31,9 @@
   .shelf-item {
     width: 25%;
     margin: 2rem;
+  }
+  .shelf {
+    width: 80%;
   }
 }
 
