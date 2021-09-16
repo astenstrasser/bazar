@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Header from "./header/Header";
+import Header from "./common/header/Header";
 import Shelf from "./shelf/Shelf";
 
 const App: React.FC = () => {

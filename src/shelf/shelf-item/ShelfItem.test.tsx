@@ -5,11 +5,12 @@ import ShelfItem from "./ShelfItem";
 test("renders snapshot", () => {
   const { container } = render(
     <ShelfItem
+      _id="id"
       name="test"
-      description="test"
-      image="scr"
+      details="test"
+      imageUrl="scr"
       price={1342.0}
-      image_alt="test"
+      imageAltText="test"
     />
   );
   expect(container.firstChild).toMatchSnapshot();
