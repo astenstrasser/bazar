@@ -3,5 +3,11 @@
 exports[`renders snapshot 1`] = `
 <div
   class="shelf"
-/>
+>
+  <div>
+    <span>
+      Loading...
+    </span>
+  </div>
+</div>
 `;
