@@ -1,7 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`renders product 1`] = `
+<div>
+  <div />
+  <div
+    class="details"
+  >
+    <h1>
+      Mock Product 1
+    </h1>
+    <img
+      src="http://localhost:8080/image"
+    />
+    <span>
+       
+    </span>
+    <span>
+       
+      100
+    </span>
+  </div>
+  <a
+    href="/"
+  >
+    Voltar
+  </a>
+</div>
+`;
+
 exports[`renders snapshot 1`] = `
 <div>
-  Hello world
+  <span>
+    Loading...
+  </span>
 </div>
 `;

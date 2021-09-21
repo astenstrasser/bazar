@@ -33,17 +33,15 @@ afterAll(() => server.close());
 
 test("renders snapshot", () => {
   const { container } = render(<Shelf />);
-  expect(container.firstChild).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });
 
 test("renders data", async () => {
-  render(<Shelf />);
+  const { container } = render(<Shelf />);
 
   await waitFor(() => screen.getAllByRole("heading"));
 
-  expect(screen.getAllByRole("heading")[0]).toHaveTextContent("MOCK PRODUCT 1");
-  expect(screen.getAllByRole("heading")[1]).toHaveTextContent("MOCK PRODUCT 2");
-  expect(screen.queryByText("Loading...")).toBeNull();
+  expect(container).toMatchSnapshot();
 });
 
 test("should display loading tag while fetching data", async () => {

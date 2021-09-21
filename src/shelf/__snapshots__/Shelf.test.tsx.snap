@@ -1,13 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`renders data 1`] = `
+<div>
+  <div
+    class="shelf"
+  >
+    <div />
+    <div
+      class="shelf-item"
+      data-testid="shelf-item"
+    >
+      <div
+        class="shelf-item--header"
+      >
+        <div
+          class="shelf-item--info"
+        >
+          <h1>
+            MOCK PRODUCT 1
+             
+          </h1>
+          <p />
+        </div>
+        <div
+          class="shelf-item--price"
+        >
+          R$ 
+          100
+        </div>
+      </div>
+      <img
+        class="shelf-item--picture"
+        src="http://localhost:8080/image"
+      />
+    </div>
+    <div
+      class="shelf-item"
+      data-testid="shelf-item"
+    >
+      <div
+        class="shelf-item--header"
+      >
+        <div
+          class="shelf-item--info"
+        >
+          <h1>
+            MOCK PRODUCT 2
+             
+          </h1>
+          <p />
+        </div>
+        <div
+          class="shelf-item--price"
+        >
+          R$ 
+          123
+        </div>
+      </div>
+      <img
+        class="shelf-item--picture"
+        src="http://localhost:8080/image2"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders snapshot 1`] = `
-<div
-  class="shelf"
->
-  <div>
-    <span>
-      Loading...
-    </span>
+<div>
+  <div
+    class="shelf"
+  >
+    <div>
+      <span>
+        Loading...
+      </span>
+    </div>
   </div>
 </div>
 `;
