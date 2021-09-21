@@ -3,6 +3,7 @@
 exports[`renders snapshot 1`] = `
 <div
   class="shelf-item"
+  data-testid="shelf-item"
 >
   <div
     class="shelf-item--header"
@@ -11,7 +12,6 @@ exports[`renders snapshot 1`] = `
       class="shelf-item--info"
     >
       <h1>
-         
         TEST
          
       </h1>

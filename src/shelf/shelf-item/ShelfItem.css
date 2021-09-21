@@ -10,6 +10,10 @@
   box-shadow: 0 0 9px 1px #e7e7e7;
 }
 
+.shelf-item:hover {
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
   .shelf-item {
     margin: 1rem 0;
