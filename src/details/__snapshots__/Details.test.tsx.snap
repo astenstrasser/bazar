@@ -2,36 +2,69 @@
 
 exports[`renders product 1`] = `
 <div>
-  <div />
   <div
-    class="details"
+    class="details-page"
   >
-    <h1>
-      Mock Product 1
-    </h1>
-    <img
-      src="http://localhost:8080/image"
+    <div
+      class="loading"
     />
-    <span>
-       
-    </span>
-    <span>
-       
-      100
-    </span>
+    <div
+      class="item"
+    >
+      <h1
+        class="item--title"
+      >
+        MOCK PRODUCT 1
+      </h1>
+      <div
+        class="item--body"
+      >
+        <img
+          class="item--picture"
+          src="http://localhost:8080/image"
+        />
+        <div
+          class="item--information"
+        >
+          <span>
+             R$ 
+            100
+          </span>
+          <p>
+            <strong>
+              Descrição:
+            </strong>
+            <br />
+          </p>
+        </div>
+      </div>
+    </div>
+    <a
+      class="return--button"
+      href="/"
+    >
+      Voltar
+    </a>
   </div>
-  <a
-    href="/"
-  >
-    Voltar
-  </a>
 </div>
 `;
 
 exports[`renders snapshot 1`] = `
-<div>
-  <span>
-    Loading...
-  </span>
+<div
+  class="details-page"
+>
+  <div
+    class="loading"
+  >
+    <span>
+      Loading...
+    </span>
+  </div>
+  <a
+    class="return--button"
+    href="/"
+  >
+    Voltar
+  </a>
 </div>
 `;

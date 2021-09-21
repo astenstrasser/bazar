@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Details.css";
-import { BrowserRouter, Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Product } from "../common/types";
 
 function Details(): React.ReactElement {
@@ -22,21 +22,33 @@ function Details(): React.ReactElement {
   }, []);
 
   return (
-    <>
-      <div>{isLoading && <span>Loading...</span>}</div>
+    <div className="details-page">
+      <div className="loading">{isLoading && <span>Loading...</span>}</div>
       {product && (
-        <div className="details">
-          <h1>{product.name}</h1>
-          <img src={product?.imageUrl} alt={product?.imageAltText} />
-          <span> {product.details}</span>
-          <span> {product.price}</span>
+        <div className="item">
+          <h1 className="item--title">{product.name.toUpperCase()}</h1>
+          <div className="item--body">
+            <img
+              className="item--picture"
+              src={product?.imageUrl}
+              alt={product?.imageAltText}
+            />
+            <div className="item--information">
+              <span> R$ {product.price}</span>
+              <p>
+                <strong>Descrição:</strong>
+                <br />
+                {product.details}
+              </p>
+            </div>
+          </div>
         </div>
       )}
 
-      <BrowserRouter>
-        <Link to="/">Voltar</Link>
-      </BrowserRouter>
-    </>
+      <a href={"/"} className="return--button">
+        Voltar
+      </a>
+    </div>
   );
 }
 
