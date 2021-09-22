@@ -1,0 +1,11 @@
+.return-icon {
+    text-decoration: none;
+    color: #003559;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.return-icon img {
+    width: 32px;
+}

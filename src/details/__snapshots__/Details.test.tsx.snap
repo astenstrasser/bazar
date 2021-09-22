@@ -38,7 +38,7 @@ exports[`renders product 1`] = `
       </div>
     </div>
     <a
-      class="return--button"
+      class="return-icon"
       href="/"
     >
       <img
@@ -85,7 +85,7 @@ exports[`renders snapshot 1`] = `
     </div>
   </div>
   <a
-    class="return--button"
+    class="return-icon"
     href="/"
   >
     <img

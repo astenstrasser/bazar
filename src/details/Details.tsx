@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./Details.css";
 import { useParams } from "react-router-dom";
 import { Product } from "../common/types";
-import ArrowIcon from "../assets/left-arrow.svg";
 import LoadingTag from "../common/loading-tag/LoadingTag";
+import ReturnIcon from "../common/return-icon/ReturnIcon";
 
 function Details(): React.ReactElement {
   const { id }: { id: string } = useParams();
@@ -46,10 +46,7 @@ function Details(): React.ReactElement {
           </div>
         </div>
       )}
-      <a href={"/"} className="return--button">
-        <img src={ArrowIcon} alt="Seta para retornar à página anterior" />
-        Voltar
-      </a>
+      <ReturnIcon reference={"/"} />
     </div>
   );
 }
