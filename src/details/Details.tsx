@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./Details.css";
 import { useParams } from "react-router-dom";
 import { Product } from "../common/types";
+import ArrowIcon from "../assets/left-arrow.svg";
+import LoadingTag from "../common/loading-tag/LoadingTag";
 
 function Details(): React.ReactElement {
   const { id }: { id: string } = useParams();
@@ -19,11 +21,11 @@ function Details(): React.ReactElement {
           setIsLoading(false);
         });
     return () => setIsLoading(false);
-  }, []);
+  }, [LoadingTag]);
 
   return (
     <div className="details-page">
-      <div className="loading">{isLoading && <span>Loading...</span>}</div>
+      <LoadingTag isLoading={isLoading} />
       {product && (
         <div className="item">
           <h1 className="item--title">{product.name.toUpperCase()}</h1>
@@ -44,8 +46,8 @@ function Details(): React.ReactElement {
           </div>
         </div>
       )}
-
       <a href={"/"} className="return--button">
+        <img src={ArrowIcon} alt="Seta para retornar à página anterior" />
         Voltar
       </a>
     </div>

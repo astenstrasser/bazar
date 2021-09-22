@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Shelf.css";
 import ShelfItem from "./shelf-item/ShelfItem";
 import { Product } from "../common/types";
+import LoadingTag from "../common/loading-tag/LoadingTag";
 
 const Shelf: React.FC = () => {
   const [products, setProducts] = useState([]);
@@ -21,7 +22,7 @@ const Shelf: React.FC = () => {
 
   return (
     <div className="shelf">
-      <div>{isLoading && <span>Loading...</span>}</div>
+      <LoadingTag isLoading={isLoading} />
       {products &&
         products.map((product: Product) => (
           <ShelfItem key={product._id} {...product} />

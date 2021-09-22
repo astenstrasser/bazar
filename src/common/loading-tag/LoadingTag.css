@@ -1,0 +1,64 @@
+.loading-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 4rem;
+}
+
+.spinner {
+  width: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  animation: spinning 4s linear 0s infinite;
+  margin-top: 10rem;
+  margin-bottom: 1rem;
+}
+
+.petal {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin: 4px;
+  animation: scaling 1.5s linear infinite;
+}
+
+#p1 {
+  background: #219ebc;
+  border-bottom-right-radius: 0;
+  transform-origin: bottom right;
+}
+
+#p2 {
+  background: #06ba63;
+  border-bottom-left-radius: 0;
+  transform-origin: bottom left;
+  animation-delay: 0.5s;
+}
+
+#p3 {
+  background: #ffb703;
+  border-top-right-radius: 0;
+  transform-origin: top right;
+  animation-delay: 1.5s;
+}
+
+#p4 {
+  background: #003559;
+  border-top-left-radius: 0;
+  transform-origin: top left;
+  animation-delay: 1s;
+}
+
+@keyframes spinning {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scaling {
+  50% {
+    transform: scale(1.2);
+  }
+}

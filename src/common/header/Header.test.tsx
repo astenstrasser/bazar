@@ -2,8 +2,7 @@ import React from "react";
 import Header from "./Header";
 import { render } from "@testing-library/react";
 
-test("renders logo", () => {
-  const { getByRole, getByAltText } = render(<Header />);
-  expect(getByRole("img")).toBeInTheDocument();
-  expect(getByAltText("logo bazar")).toBeInTheDocument();
+test("renders snapshot", () => {
+  const { container } = render(<Header />);
+  expect(container.firstChild).toMatchSnapshot();
 });

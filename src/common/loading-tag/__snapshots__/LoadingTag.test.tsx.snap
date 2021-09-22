@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders snapshot 1`] = `
+<div>
+  <div>
+    <div
+      class="loading-container"
+    >
+      <div
+        class="spinner"
+      >
+        <div
+          class="petal"
+          id="p1"
+        />
+        <div
+          class="petal"
+          id="p2"
+        />
+        <div
+          class="petal"
+          id="p3"
+        />
+        <div
+          class="petal"
+          id="p4"
+        />
+      </div>
+      <span>
+        Loading...
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders snapshot when is not loading 1`] = `
+<div>
+  <div />
+</div>
+`;
