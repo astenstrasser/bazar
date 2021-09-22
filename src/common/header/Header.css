@@ -11,3 +11,10 @@
   margin-top: 5rem;
   margin-bottom: 2rem;
 }
+
+.google-login {
+  position: absolute;
+  top: 5%;
+  float: right;
+  right: 2%;
+}
