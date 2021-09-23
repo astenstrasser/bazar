@@ -1,8 +1,8 @@
 import { render } from "@testing-library/react";
 import React from "react";
-import Login from "./Login";
+import GoogleAuthentication from "./GoogleAuthentication";
 
 test("renders snapshot", () => {
-  const { container } = render(<Login />);
+  const { container } = render(<GoogleAuthentication />);
   expect(container).toMatchSnapshot();
 });
