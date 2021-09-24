@@ -1,8 +1,9 @@
 import React from "react";
 import { useGoogleAuth } from "react-gapi-auth2";
+import "./GoogleAuthentication.css";
 import LoginIcon from "../../assets/login-icon.svg";
 import LogoutIcon from "../../assets/logout-icon.svg";
-import "./GoogleAuthentication.css";
+import ActionIcon from "../action-icon/ActionIcon";
 
 function GoogleAuthentication(): React.ReactElement {
   const { googleAuth } = useGoogleAuth();
@@ -15,23 +16,19 @@ function GoogleAuthentication(): React.ReactElement {
   return (
     <div className="google-login">
       {googleAuth?.isSignedIn.get() == false && (
-        <a onClick={() => googleAuth?.signIn()}>
-          <img
-            className="action-icon"
-            src={LoginIcon}
-            alt="Ícone para logar na aplicação"
-          />
-        </a>
+        <ActionIcon
+          onClick={() => googleAuth?.signIn()}
+          src={LoginIcon}
+          alt={"Ícone para logar na aplicação"}
+        />
       )}
 
       {googleAuth?.isSignedIn.get() && (
-        <a onClick={handleSignOut}>
-          <img
-            className="action-icon"
-            src={LogoutIcon}
-            alt="Ícone para deslogar da aplicação"
-          />
-        </a>
+        <ActionIcon
+          onClick={handleSignOut}
+          src={LogoutIcon}
+          alt={"Ícone para deslogar da aplicação"}
+        />
       )}
     </div>
   );
