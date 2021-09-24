@@ -13,7 +13,7 @@ const Shelf: React.FC = () => {
   const { googleAuth } = useGoogleAuth();
 
   useEffect(() => {
-    const url = "https://bah-zar-api.herokuapp.com/product";
+    const url = "https://bah-zar-api.herokuapp.com/products";
     isLoading &&
       fetch(url)
         .then((res) => res.json())

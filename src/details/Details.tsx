@@ -17,7 +17,7 @@ function Details(): React.ReactElement {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const url = `https://bah-zar-api.herokuapp.com/product/${id}`;
+    const url = `https://bah-zar-api.herokuapp.com/products/${id}`;
     isLoading &&
       fetch(url)
         .then((res) => res.json())

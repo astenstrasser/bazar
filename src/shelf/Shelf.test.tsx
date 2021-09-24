@@ -24,7 +24,7 @@ const mockResponse: Product[] = [
 ];
 
 const server = setupServer(
-  rest.get("https://bah-zar-api.herokuapp.com/product", (req, res, ctx) => {
+  rest.get("https://bah-zar-api.herokuapp.com/products", (req, res, ctx) => {
     return res(ctx.json(mockResponse));
   })
 );
@@ -55,7 +55,7 @@ test("renders data", async () => {
 
 test("should display loading tag while fetching data", async () => {
   server.use(
-    rest.get("https://bah-zar-api.herokuapp.com/product", (req, res, ctx) => {
+    rest.get("https://bah-zar-api.herokuapp.com/products", (req, res, ctx) => {
       setTimeout(() => {
         return res(ctx.json(mockResponse));
       }, 10);

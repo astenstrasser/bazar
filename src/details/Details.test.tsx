@@ -22,7 +22,7 @@ const mockResponse: Product = {
 
 const server = setupServer(
   rest.get(
-    "https://bah-zar-api.herokuapp.com/product/mock-id1",
+    "https://bah-zar-api.herokuapp.com/products/mock-id1",
     (req, res, ctx) => {
       return res(ctx.json(mockResponse));
     }
