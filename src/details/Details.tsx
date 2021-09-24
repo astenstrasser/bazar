@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useGoogleAuth } from "react-gapi-auth2";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import "./Details.css";
 import { Product } from "../common/types";
 import LoadingTag from "../common/loading-tag/LoadingTag";
-import ReturnIcon from "../common/return-icon/ReturnIcon";
+import ActionIcon, { Icon } from "../common/action-icon/ActionIcon";
 
 function Details(): React.ReactElement {
   const { id }: { id: string } = useParams();
@@ -12,6 +12,7 @@ function Details(): React.ReactElement {
   const { googleAuth } = useGoogleAuth();
   console.log("user logado", googleAuth?.isSignedIn.get());
 
+  const history = useHistory();
   const [product, setProduct] = useState<Product>();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -50,7 +51,13 @@ function Details(): React.ReactElement {
           </div>
         </div>
       )}
-      <ReturnIcon reference={"/"} />
+      <ActionIcon
+        onClick={() => {
+          history.push("/");
+        }}
+        alt="Seta para retornar à página anterior"
+        type={Icon.LeftArrow}
+      />
     </div>
   );
 }

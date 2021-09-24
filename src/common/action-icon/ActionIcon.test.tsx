@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import React from "react";
-import ActionIcon from "./ActionIcon";
+import ActionIcon, { Icon } from "./ActionIcon";
 
 test("renders snapshot", () => {
   const { container } = render(
@@ -9,7 +9,7 @@ test("renders snapshot", () => {
         console.log("test");
       }}
       alt={"alt"}
-      src={"src"}
+      type={Icon.LeftArrow}
     />
   );
   expect(container).toMatchSnapshot();

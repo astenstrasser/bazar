@@ -4,8 +4,7 @@ import "./Shelf.css";
 import ShelfItem from "./shelf-item/ShelfItem";
 import { Product } from "../common/types";
 import LoadingTag from "../common/loading-tag/LoadingTag";
-import ActionIcon from "../common/action-icon/ActionIcon";
-import PlusIcon from "../assets/plus.svg";
+import ActionIcon, { Icon } from "../common/action-icon/ActionIcon";
 
 const Shelf: React.FC = () => {
   const [products, setProducts] = useState([]);
@@ -39,7 +38,7 @@ const Shelf: React.FC = () => {
           onClick={() => {
             console.log("clicou");
           }}
-          src={PlusIcon}
+          type={Icon.Plus}
           alt="Ícone para adicionar um produto"
         />
       )}

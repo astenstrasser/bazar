@@ -6,7 +6,7 @@ function ReturnIcon(props: { reference: string }): React.ReactElement {
   return (
     <>
       <a href={props.reference} className="return-icon">
-        <img src={ArrowIcon} alt="Seta para retornar à página anterior" />
+        <img src={ArrowIcon} alt="" />
         Voltar
       </a>
     </>
