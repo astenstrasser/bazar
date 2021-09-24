@@ -1,46 +1,37 @@
-import React, { useState } from "react";
-import GoogleLogin, {
-  GoogleLoginResponse,
-  GoogleLoginResponseOffline,
-  GoogleLogout,
-} from "react-google-login";
-
-const CLIENT_ID = process.env.REACT_APP_CLIENT_ID
-  ? process.env.REACT_APP_CLIENT_ID
-  : "";
+import React from "react";
+import { useGoogleAuth } from "react-gapi-auth2";
+import LoginIcon from "../../assets/login-icon.svg";
+import LogoutIcon from "../../assets/logout-icon.svg";
+import "./GoogleAuthentication.css";
 
 function GoogleAuthentication(): React.ReactElement {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { googleAuth } = useGoogleAuth();
 
-  const onSuccess = (res: GoogleLoginResponse | GoogleLoginResponseOffline) => {
-    setIsLoggedIn(true);
-    console.log("google-authentication success", res);
+  const handleSignOut = () => {
+    googleAuth?.signOut();
+    alert("Deslogado com sucesso!");
   };
-  const onFailure = (res: GoogleLoginResponse | GoogleLoginResponseOffline) => {
-    console.log("google-authentication Failed", res);
-  };
-  const logoutSuccess = () => {
-    console.log("logout success");
-    setIsLoggedIn(false);
-    alert("Logout feito com sucesso");
-  };
+
   return (
     <div className="google-login">
-      {!isLoggedIn && (
-        <GoogleLogin
-          clientId={CLIENT_ID}
-          buttonText="Login"
-          onSuccess={onSuccess}
-          onFailure={onFailure}
-        />
+      {googleAuth?.isSignedIn.get() == false && (
+        <a onClick={() => googleAuth?.signIn()}>
+          <img
+            className="action-icon"
+            src={LoginIcon}
+            alt="Ícone para logar na aplicação"
+          />
+        </a>
       )}
 
-      {isLoggedIn && (
-        <GoogleLogout
-          clientId={CLIENT_ID}
-          buttonText="Logout"
-          onLogoutSuccess={logoutSuccess}
-        />
+      {googleAuth?.isSignedIn.get() && (
+        <a onClick={handleSignOut}>
+          <img
+            className="action-icon"
+            src={LogoutIcon}
+            alt="Ícone para deslogar da aplicação"
+          />
+        </a>
       )}
     </div>
   );

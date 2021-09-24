@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
-import "./Details.css";
+import { useGoogleAuth } from "react-gapi-auth2";
 import { useParams } from "react-router-dom";
+import "./Details.css";
 import { Product } from "../common/types";
 import LoadingTag from "../common/loading-tag/LoadingTag";
 import ReturnIcon from "../common/return-icon/ReturnIcon";
 
 function Details(): React.ReactElement {
   const { id }: { id: string } = useParams();
+
+  const { googleAuth } = useGoogleAuth();
+  console.log("user logado", googleAuth?.isSignedIn.get());
 
   const [product, setProduct] = useState<Product>();
   const [isLoading, setIsLoading] = useState(true);
