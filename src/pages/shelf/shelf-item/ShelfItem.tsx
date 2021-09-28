@@ -1,6 +1,6 @@
 import React from "react";
 import "./ShelfItem.css";
-import { Product } from "../../common/types";
+import { Product } from "../../../shared-components/types";
 import { useHistory } from "react-router-dom";
 
 function ShelfItem(product: Product): React.ReactElement {

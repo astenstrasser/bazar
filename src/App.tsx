@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { GApiProvider } from "react-gapi-auth2";
-import Header from "./common/header/Header";
-import Shelf from "./shelf/Shelf";
-import Details from "./details/Details";
+import Header from "./shared-components/header/Header";
+import Shelf from "./pages/shelf/Shelf";
+import Details from "./pages/details/Details";
 
 const App: React.FC = () => {
   const clientConfig = {

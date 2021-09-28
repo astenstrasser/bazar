@@ -6,3 +6,10 @@ export interface Product {
   imageUrl?: string;
   imageAltText?: string;
 }
+
+export enum Icon {
+  LeftArrow,
+  Login,
+  Logout,
+  Plus,
+}

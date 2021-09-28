@@ -1,24 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { useGoogleAuth } from "react-gapi-auth2";
 import { useParams } from "react-router-dom";
 import "./Details.css";
-import { Product } from "../common/types";
-import LoadingTag from "../common/loading-tag/LoadingTag";
-import ReturnIcon from "../common/return-icon/ReturnIcon";
+import { Product } from "../../shared-components/types";
+import LoadingTag from "../../shared-components/loading-tag/LoadingTag";
+import ReturnIcon from "../../shared-components/return-icon/ReturnIcon";
+import { fetchProductById } from "../../api/api";
 
 function Details(): React.ReactElement {
   const { id }: { id: string } = useParams();
-
-  const { googleAuth } = useGoogleAuth();
-  console.log("user logado", googleAuth?.isSignedIn.get());
 
   const [product, setProduct] = useState<Product>();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const url = `https://bah-zar-api.herokuapp.com/products/${id}`;
     isLoading &&
-      fetch(url)
+      fetchProductById(id)
         .then((res) => res.json())
         .then((product: Product) => {
           setProduct(product);

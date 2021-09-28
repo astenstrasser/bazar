@@ -1,14 +1,9 @@
 import React from "react";
+import { Icon } from "../types";
 import LeftArrow from "../../assets/left-arrow.svg";
 import LoginIcon from "../../assets/login-icon.svg";
 import LogoutIcon from "../../assets/logout-icon.svg";
 import PlusIcon from "../../assets/plus.svg";
-export enum Icon {
-  LeftArrow,
-  Login,
-  Logout,
-  Plus,
-}
 
 function ActionIcon(props: {
   onClick: () => void;

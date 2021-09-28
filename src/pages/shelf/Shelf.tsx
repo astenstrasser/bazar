@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useGoogleAuth } from "react-gapi-auth2";
 import "./Shelf.css";
 import ShelfItem from "./shelf-item/ShelfItem";
-import { Product } from "../common/types";
-import LoadingTag from "../common/loading-tag/LoadingTag";
-import ActionIcon, { Icon } from "../common/action-icon/ActionIcon";
+import { Icon, Product } from "../../shared-components/types";
+import LoadingTag from "../../shared-components/loading-tag/LoadingTag";
+import ActionIcon from "../../shared-components/action-icon/ActionIcon";
+import { fetchAllProducts } from "../../api/api";
 
 const Shelf: React.FC = () => {
   const [products, setProducts] = useState([]);
@@ -13,9 +14,8 @@ const Shelf: React.FC = () => {
   const { googleAuth } = useGoogleAuth();
 
   useEffect(() => {
-    const url = "https://bah-zar-api.herokuapp.com/products";
     isLoading &&
-      fetch(url)
+      fetchAllProducts()
         .then((res) => res.json())
         .then((products) => {
           setProducts(products);

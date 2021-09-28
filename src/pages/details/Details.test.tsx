@@ -3,7 +3,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import Details from "./Details";
 import { setupServer } from "msw/node";
 import { rest } from "msw";
-import { Product } from "../common/types";
+import { Product } from "../../shared-components/types";
 import { GApiProvider } from "react-gapi-auth2";
 
 jest.mock("react-router-dom", () => ({
