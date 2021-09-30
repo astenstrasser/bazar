@@ -37,16 +37,20 @@ exports[`renders product 1`] = `
         </div>
       </div>
     </div>
-    <a
-      class="return-icon"
-      href="/"
+    <div
+      class="return-icon--container"
     >
-      <img
-        alt="Retornar à página anterior"
-        src="left-arrow.svg"
-      />
-      Voltar
-    </a>
+      <a
+        class="return-icon"
+        href="/"
+      >
+        <img
+          alt="Retornar à página anterior"
+          src="left-arrow.svg"
+        />
+        Voltar
+      </a>
+    </div>
   </div>
 </div>
 `;
@@ -85,16 +89,20 @@ exports[`renders snapshot while loading 1`] = `
         </span>
       </div>
     </div>
-    <a
-      class="return-icon"
-      href="/"
+    <div
+      class="return-icon--container"
     >
-      <img
-        alt="Retornar à página anterior"
-        src="left-arrow.svg"
-      />
-      Voltar
-    </a>
+      <a
+        class="return-icon"
+        href="/"
+      >
+        <img
+          alt="Retornar à página anterior"
+          src="left-arrow.svg"
+        />
+        Voltar
+      </a>
+    </div>
   </div>
 </div>
 `;
