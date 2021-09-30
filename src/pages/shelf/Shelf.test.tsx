@@ -1,12 +1,14 @@
 import React from "react";
-import { render, waitFor, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import Shelf from "./Shelf";
 import { rest } from "msw";
 
 import { setupServer } from "msw/node";
 
 import { Product } from "../../shared-components/types";
-import { GApiProvider } from "react-gapi-auth2";
+import { GApiProvider, useGoogleAuth } from "react-gapi-auth2";
+import spyOn = jest.spyOn;
+import mock = jest.mock;
 
 const mockResponse: Product[] = [
   {

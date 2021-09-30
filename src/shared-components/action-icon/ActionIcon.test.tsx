@@ -5,13 +5,7 @@ import { Icon } from "../types";
 
 test("renders snapshot", () => {
   const { container } = render(
-    <ActionIcon
-      onClick={() => {
-        console.log("test");
-      }}
-      alt={"alt"}
-      type={Icon.LeftArrow}
-    />
+    <ActionIcon onClick={() => {}} alt={"alt"} type={Icon.LeftArrow} />
   );
   expect(container).toMatchSnapshot();
 });

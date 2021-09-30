@@ -4,6 +4,7 @@ import { GApiProvider } from "react-gapi-auth2";
 import Header from "./shared-components/header/Header";
 import Shelf from "./pages/shelf/Shelf";
 import Details from "./pages/details/Details";
+import Form from "./pages/form/Form";
 
 const App: React.FC = () => {
   const clientConfig = {
@@ -16,6 +17,9 @@ const App: React.FC = () => {
         <Header />
 
         <Switch>
+          <Route path="/new-product">
+            <Form />
+          </Route>
           <Route path="/:id">
             <Details />
           </Route>

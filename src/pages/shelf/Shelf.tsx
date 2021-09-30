@@ -6,12 +6,14 @@ import { Icon, Product } from "../../shared-components/types";
 import LoadingTag from "../../shared-components/loading-tag/LoadingTag";
 import ActionIcon from "../../shared-components/action-icon/ActionIcon";
 import { fetchAllProducts } from "../../api/api";
+import { useHistory } from "react-router-dom";
 
 const Shelf: React.FC = () => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const { googleAuth } = useGoogleAuth();
+  const history = useHistory();
 
   useEffect(() => {
     isLoading &&
@@ -36,7 +38,7 @@ const Shelf: React.FC = () => {
       {googleAuth?.isSignedIn.get() && (
         <ActionIcon
           onClick={() => {
-            console.log("clicou");
+            history.push("/new-product");
           }}
           type={Icon.Plus}
           alt="Ícone para adicionar um produto"
