@@ -1,6 +1,5 @@
 import React from "react";
 import { useGoogleAuth } from "react-gapi-auth2";
-import "./GoogleAuthentication.css";
 import ActionIcon from "../action-icon/ActionIcon";
 import { Icon } from "../types";
 

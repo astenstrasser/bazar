@@ -1,24 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders snapshot 1`] = `
-<div
-  class="header"
->
-  <a
-    href="/"
-  >
-    <img
-      alt="logo bazar"
-      class="header-logo"
-      src="logo.png"
-    />
-  </a>
+<div>
   <div
-    class="google-login"
+    class="header"
   >
+    <a
+      href="/"
+    >
+      <img
+        alt="logo bazar"
+        class="header-logo"
+        src="logo.png"
+      />
+    </a>
     <div
       class="google-login"
-    />
+    >
+      <div
+        class="google-login"
+      />
+    </div>
+  </div>
+  <div
+    class="shelf"
+  >
+    <div>
+      <div
+        class="loading-container"
+      >
+        <div
+          class="spinner"
+        >
+          <div
+            class="petal"
+            id="p1"
+          />
+          <div
+            class="petal"
+            id="p2"
+          />
+          <div
+            class="petal"
+            id="p3"
+          />
+          <div
+            class="petal"
+            id="p4"
+          />
+        </div>
+        <span>
+          Loading...
+        </span>
+      </div>
+    </div>
   </div>
 </div>
 `;

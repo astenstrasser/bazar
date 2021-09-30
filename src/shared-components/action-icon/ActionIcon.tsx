@@ -1,5 +1,6 @@
 import React from "react";
 import { Icon } from "../types";
+import "./ActionIcon.css";
 import LeftArrow from "../../assets/left-arrow.svg";
 import LoginIcon from "../../assets/login-icon.svg";
 import LogoutIcon from "../../assets/logout-icon.svg";

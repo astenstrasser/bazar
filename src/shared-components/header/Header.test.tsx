@@ -9,5 +9,5 @@ test("renders snapshot", () => {
       <Header />
     </GApiProvider>
   );
-  expect(container.firstChild).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });

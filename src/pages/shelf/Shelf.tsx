@@ -36,13 +36,15 @@ const Shelf: React.FC = () => {
           ))}
       </div>
       {googleAuth?.isSignedIn.get() && (
-        <ActionIcon
-          onClick={() => {
-            history.push("/new-product");
-          }}
-          type={Icon.Plus}
-          alt="Ícone para adicionar um produto"
-        />
+        <div className="create-icon">
+          <ActionIcon
+            onClick={() => {
+              history.push("/new-product");
+            }}
+            type={Icon.Plus}
+            alt="Ícone para adicionar um produto"
+          />
+        </div>
       )}
     </>
   );

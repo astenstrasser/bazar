@@ -4,5 +4,5 @@ import App from "./App";
 
 test("renders snapshot", () => {
   const { container } = render(<App />);
-  expect(container.firstChild).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });
