@@ -1,0 +1,30 @@
+@media (min-width: 600px) {
+  .form-container {
+    margin: 4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-container {
+    margin-top: 1rem;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-field {
+  margin-top: 1rem;
+}
+
+.submit {
+  width: 10rem;
+  margin-top: 1rem;
+}
+
+.form-field--input {
+  margin-left: 0.3rem;
+}

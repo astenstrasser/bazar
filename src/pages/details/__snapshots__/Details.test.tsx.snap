@@ -42,7 +42,7 @@ exports[`renders product 1`] = `
       href="/"
     >
       <img
-        alt=""
+        alt="Retornar à página anterior"
         src="left-arrow.svg"
       />
       Voltar
@@ -90,7 +90,7 @@ exports[`renders snapshot while loading 1`] = `
       href="/"
     >
       <img
-        alt=""
+        alt="Retornar à página anterior"
         src="left-arrow.svg"
       />
       Voltar
