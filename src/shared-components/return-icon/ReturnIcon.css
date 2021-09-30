@@ -10,3 +10,7 @@
 .return-icon img {
   width: 32px;
 }
+
+.return-icon--container{
+  display: inline-block;
+}

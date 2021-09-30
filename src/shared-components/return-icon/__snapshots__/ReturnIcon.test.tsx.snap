@@ -2,15 +2,19 @@
 
 exports[`renders snapshot 1`] = `
 <div>
-  <a
-    class="return-icon"
-    href="/"
+  <div
+    class="return-icon--container"
   >
-    <img
-      alt=""
-      src="left-arrow.svg"
-    />
-    Voltar
-  </a>
+    <a
+      class="return-icon"
+      href="/"
+    >
+      <img
+        alt="Retornar à página anterior"
+        src="left-arrow.svg"
+      />
+      Voltar
+    </a>
+  </div>
 </div>
 `;
