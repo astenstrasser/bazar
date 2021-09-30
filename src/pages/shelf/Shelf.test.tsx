@@ -6,9 +6,7 @@ import { rest } from "msw";
 import { setupServer } from "msw/node";
 
 import { Product } from "../../shared-components/types";
-import { GApiProvider, useGoogleAuth } from "react-gapi-auth2";
-import spyOn = jest.spyOn;
-import mock = jest.mock;
+import { GApiProvider } from "react-gapi-auth2";
 
 const mockResponse: Product[] = [
   {

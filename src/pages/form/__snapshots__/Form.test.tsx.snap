@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders snapshot 1`] = `
+<div>
+  <form>
+    <label>
+      Nome do Produto:
+      <input
+        name="name"
+        type="text"
+        value=""
+      />
+    </label>
+    <label>
+      Preço:
+      <input
+        name="price"
+        type="number"
+        value="0"
+      />
+    </label>
+    <input
+      type="submit"
+      value="Enviar"
+    />
+  </form>
+</div>
+`;
