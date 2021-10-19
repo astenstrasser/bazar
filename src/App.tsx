@@ -5,6 +5,7 @@ import Header from "./shared-components/header/Header";
 import Shelf from "./pages/shelf/Shelf";
 import Details from "./pages/details/Details";
 import Form from "./pages/form/Form";
+import { createNewProduct } from "./api/api";
 
 const App: React.FC = () => {
   const clientConfig = {
@@ -19,8 +20,18 @@ const App: React.FC = () => {
         <Switch>
           <Route path="/new-product">
             <Form
-              handleSubmit={(name, price, description, picture) => {
-                console.log(name, price, description, picture);
+              handleSubmit={(formFields) => {
+                try {
+                  const createdProduct = createNewProduct(
+                    formFields.name,
+                    formFields.price,
+                    formFields.description,
+                    formFields.picture
+                  );
+                  console.log("CREATED PROD", createdProduct);
+                } catch (err) {
+                  console.log(err);
+                }
               }}
             />
           </Route>

@@ -29,7 +29,7 @@ function Form({ handleSubmit }: FormProps): React.ReactElement {
       <div className="form-container">
         <div className="form">
           <div className="form-field">
-            <label htmlFor="name">Nome do Produto</label>
+            <label htmlFor="name">Nome do Produto *</label>
             <input
               id="name"
               type="text"
@@ -39,7 +39,7 @@ function Form({ handleSubmit }: FormProps): React.ReactElement {
           </div>
 
           <div className="form-field">
-            <label htmlFor="price">Preço</label>
+            <label htmlFor="price">Preço *</label>
             <input
               id="price"
               value={price}
