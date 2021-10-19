@@ -19,8 +19,8 @@ const App: React.FC = () => {
         <Switch>
           <Route path="/new-product">
             <Form
-              handleSubmit={(name, price) => {
-                console.log(name, price);
+              handleSubmit={(name, price, description, picture) => {
+                console.log(name, price, description, picture);
               }}
             />
           </Route>

@@ -28,7 +28,17 @@
   padding: 0.3rem;
 }
 
-.submit {
+.submit--button {
   margin-top: 1rem;
-  padding: 0.4rem 1.5rem;
+  padding: 0.6rem 1.5rem;
+  background-color: #06ba63;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.submit--button:disabled{
+  background-color: #02304750;
+  cursor: default;
 }

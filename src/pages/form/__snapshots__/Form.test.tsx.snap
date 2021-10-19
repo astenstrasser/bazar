@@ -14,7 +14,7 @@ exports[`renders snapshot 1`] = `
         <label
           for="name"
         >
-          Nome do Produto:
+          Nome do Produto
         </label>
         <input
           id="name"
@@ -28,7 +28,7 @@ exports[`renders snapshot 1`] = `
         <label
           for="price"
         >
-          Preço:
+          Preço
         </label>
         <input
           id="price"
@@ -36,9 +36,38 @@ exports[`renders snapshot 1`] = `
           value="0"
         />
       </div>
+      <div
+        class="form-field"
+      >
+        <label
+          for="description"
+        >
+          Descrição
+        </label>
+        <input
+          id="description"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="form-field"
+      >
+        <label
+          for="picture"
+        >
+          Foto (url)
+        </label>
+        <input
+          id="picture"
+          type="text"
+          value=""
+        />
+      </div>
       <button
-        class="submit"
+        class="submit--button"
         disabled=""
+        title="Submit form"
       >
         Submit
       </button>
