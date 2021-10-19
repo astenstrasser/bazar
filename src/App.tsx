@@ -26,7 +26,8 @@ const App: React.FC = () => {
                     formFields.name,
                     formFields.price,
                     formFields.description,
-                    formFields.picture
+                    formFields.picture,
+                    formFields.pictureAltText
                   );
                   console.log("CREATED PROD", createdProduct);
                 } catch (err) {

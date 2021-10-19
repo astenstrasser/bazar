@@ -15,12 +15,14 @@ export async function createNewProduct(
   name: string,
   price: number,
   description: string,
-  picture: string
+  picture: string,
+  pictureAltText: string
 ): Promise<Response> {
   return axios.post(`${BASE_URL}/products`, {
     name: name,
     price: price,
     details: description,
     imageUrl: picture,
+    imageAltText: pictureAltText,
   });
 }

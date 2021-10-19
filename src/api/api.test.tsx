@@ -25,7 +25,8 @@ test("should create new product", () => {
     "New product",
     10,
     "description",
-    "http://localhost:8080/pic-id"
+    "http://localhost:8080/pic-id",
+    "alt text"
   );
   expect(postMock).toHaveBeenCalledWith(
     "https://bah-zar-api.herokuapp.com/products",
@@ -34,6 +35,7 @@ test("should create new product", () => {
       price: 10,
       details: "description",
       imageUrl: "http://localhost:8080/pic-id",
+      imageAltText: "alt text",
     }
   );
 });

@@ -11,6 +11,7 @@ export interface FormFields {
   price: number;
   description: string;
   picture: string;
+  pictureAltText: string;
 }
 
 function Form({ handleSubmit }: FormProps): React.ReactElement {
@@ -19,6 +20,7 @@ function Form({ handleSubmit }: FormProps): React.ReactElement {
   const [price, setPrice] = useState<number>(0);
   const [picture, setPicture] = useState<string>("");
   const [description, setDescription] = useState<string>("");
+  const [pictureAltText, setPictureAltText] = useState<string>("");
 
   useEffect(() => {
     !!price && price > 0 && !!name ? setIsValid(true) : setIsValid(false);
@@ -68,10 +70,28 @@ function Form({ handleSubmit }: FormProps): React.ReactElement {
             />
           </div>
 
+          <div className="form-field">
+            <label htmlFor="altText">Alt text</label>
+            <input
+              id="altText"
+              value={pictureAltText}
+              type="text"
+              onChange={(event) => setPictureAltText(event.target.value)}
+            />
+          </div>
+
           <button
             className="submit--button"
             title="Submit form"
-            onClick={() => handleSubmit({ name, price, description, picture })}
+            onClick={() =>
+              handleSubmit({
+                name,
+                price,
+                description,
+                picture,
+                pictureAltText,
+              })
+            }
             disabled={!isValid}
           >
             Submit

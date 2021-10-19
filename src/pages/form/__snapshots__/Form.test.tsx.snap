@@ -64,6 +64,20 @@ exports[`renders snapshot 1`] = `
           value=""
         />
       </div>
+      <div
+        class="form-field"
+      >
+        <label
+          for="altText"
+        >
+          Alt text
+        </label>
+        <input
+          id="altText"
+          type="text"
+          value=""
+        />
+      </div>
       <button
         class="submit--button"
         disabled=""

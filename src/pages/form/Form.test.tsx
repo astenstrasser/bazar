@@ -18,6 +18,7 @@ test("should send all fields on submit", () => {
     price: 10,
     description: "product description",
     picture: "http://localhost:8080/picture",
+    pictureAltText: "alt text",
   };
 
   const { getByText, container } = render(
@@ -73,4 +74,10 @@ function fillFormWithFakeData(container: Container, formFields: FormFields) {
   const pictureField = container.querySelector("#picture");
   pictureField &&
     fireEvent.input(pictureField, { target: { value: formFields.picture } });
+
+  const pictureAltText = container.querySelector("#altText");
+  pictureAltText &&
+    fireEvent.input(pictureAltText, {
+      target: { value: formFields.pictureAltText },
+    });
 }
