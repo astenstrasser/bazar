@@ -3,12 +3,14 @@ import "./Form.css";
 import ReturnIcon from "../../shared-components/return-icon/ReturnIcon";
 
 interface FormProps {
-  handleSubmit: (
-    name: string,
-    price: number,
-    description: string,
-    picture: string
-  ) => void;
+  handleSubmit: (fields: FormFields) => void;
+}
+
+export interface FormFields {
+  name: string;
+  price: number;
+  description: string;
+  picture: string;
 }
 
 function Form({ handleSubmit }: FormProps): React.ReactElement {
@@ -69,7 +71,7 @@ function Form({ handleSubmit }: FormProps): React.ReactElement {
           <button
             className="submit--button"
             title="Submit form"
-            onClick={() => handleSubmit(name, price, description, picture)}
+            onClick={() => handleSubmit({ name, price, description, picture })}
             disabled={!isValid}
           >
             Submit
