@@ -5,50 +5,58 @@ exports[`renders snapshot 1`] = `
   <div
     class="form-container"
   >
-    <form>
-      <label
+    <div
+      class="form"
+    >
+      <div
         class="form-field"
       >
-        Nome do Produto:
+        <label
+          for="name"
+        >
+          Nome do Produto:
+        </label>
         <input
-          class="form-field--input"
-          name="name"
+          id="name"
           type="text"
           value=""
         />
-      </label>
-      <label
+      </div>
+      <div
         class="form-field"
       >
-        Preço:
+        <label
+          for="price"
+        >
+          Preço:
+        </label>
         <input
-          class="form-field--input"
-          name="price"
+          id="price"
           type="number"
           value="0"
         />
-      </label>
-      <input
+      </div>
+      <button
         class="submit"
         disabled=""
-        type="submit"
-        value="Enviar"
-      />
-    </form>
-    <div
-      class="return-icon--container"
-    >
-      <a
-        class="return-icon"
-        href="/"
       >
-        <img
-          alt="Retornar à página anterior"
-          src="left-arrow.svg"
-        />
-        Voltar
-      </a>
+        Submit
+      </button>
     </div>
+  </div>
+  <div
+    class="return-icon--container"
+  >
+    <a
+      class="return-icon"
+      href="/"
+    >
+      <img
+        alt="Retornar à página anterior"
+        src="left-arrow.svg"
+      />
+      Voltar
+    </a>
   </div>
 </div>
 `;

@@ -1,30 +1,34 @@
-@media (min-width: 600px) {
-  .form-container {
-    margin: 4rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .form-container {
-    margin-top: 1rem;
-  }
-}
-
-form {
+.form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 69vh;
+}
+
+.form {
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .form {
+    margin-top: 1rem;
+  }
 }
 
 .form-field {
   margin-top: 1rem;
 }
 
-.submit {
-  width: 10rem;
-  margin-top: 1rem;
+.form-field input {
+  margin-left: 0.7rem;
+  padding: 0.3rem;
 }
 
-.form-field--input {
-  margin-left: 0.3rem;
+.submit {
+  margin-top: 1rem;
+  padding: 0.4rem 1.5rem;
 }

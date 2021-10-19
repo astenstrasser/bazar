@@ -24,30 +24,32 @@ function Details(): React.ReactElement {
   }, [LoadingTag]);
 
   return (
-    <div className="details-page">
-      <LoadingTag isLoading={isLoading} />
-      {product && (
-        <div className="item">
-          <h1 className="item--title">{product.name.toUpperCase()}</h1>
-          <div className="item--body">
-            <img
-              className="item--picture"
-              src={product?.imageUrl}
-              alt={product?.imageAltText}
-            />
-            <div className="item--information">
-              <span> R$ {product.price}</span>
-              <p>
-                <strong>Descrição:</strong>
-                <br />
-                {product.details}
-              </p>
+    <>
+      <div className="details-page">
+        <LoadingTag isLoading={isLoading} />
+        {product && (
+          <div className="item">
+            <h1 className="item--title">{product.name.toUpperCase()}</h1>
+            <div className="item--body">
+              <img
+                className="item--picture"
+                src={product?.imageUrl}
+                alt={product?.imageAltText}
+              />
+              <div className="item--information">
+                <span> R$ {product.price}</span>
+                <p>
+                  <strong>Descrição:</strong>
+                  <br />
+                  {product.details}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
       <ReturnIcon reference={"/"} />
-    </div>
+    </>
   );
 }
 

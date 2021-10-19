@@ -1,73 +1,55 @@
-import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Form.css";
 import ReturnIcon from "../../shared-components/return-icon/ReturnIcon";
 
-interface Fields {
-  name: string;
-  price: number;
+interface FormProps {
+  handleSubmit: (name: string, price: number) => void;
 }
 
-function Form(): React.ReactElement {
+function Form({ handleSubmit }: FormProps): React.ReactElement {
   const [isValid, setIsValid] = useState<boolean>(false);
-  const [formFields, setFormFields] = useState<Fields>({
-    name: "",
-    price: 0,
-  });
+  const [name, setName] = useState<string>("");
+  const [price, setPrice] = useState<number>(0);
 
   useEffect(() => {
-    handleFormValidation();
-  }, [formFields, isValid]);
-
-  function handleInputChange(event: ChangeEvent<HTMLInputElement>): void {
-    setFormFields({
-      ...formFields,
-      [event.target.name]: event.target.value,
-    });
-  }
-
-  function handleSubmit(event: FormEvent<HTMLFormElement>): void {
-    console.log("submitted: ", formFields);
-    event.preventDefault();
-  }
-
-  function handleFormValidation(): void {
-    formFields.price > 0 && Boolean(formFields.name)
-      ? setIsValid(true)
-      : setIsValid(false);
-  }
+    price > 0 && !!name ? setIsValid(true) : setIsValid(false);
+  }, [price, name]);
 
   return (
-    <div className="form-container">
-      <form onSubmit={handleSubmit}>
-        <label className="form-field">
-          Nome do Produto:
-          <input
-            className="form-field--input"
-            name="name"
-            type="text"
-            value={formFields.name}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label className="form-field">
-          Preço:
-          <input
-            className="form-field--input"
-            name="price"
-            type="number"
-            value={formFields.price}
-            onChange={handleInputChange}
-          />
-        </label>
-        <input
-          className="submit"
-          disabled={!isValid}
-          type="submit"
-          value="Enviar"
-        />
-      </form>
+    <>
+      <div className="form-container">
+        <div className="form">
+          <div className="form-field">
+            <label htmlFor="name">Nome do Produto:</label>
+            <input
+              id="name"
+              type="text"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+            />
+          </div>
+
+          <div className="form-field">
+            <label htmlFor="price">Preço:</label>
+            <input
+              id="price"
+              value={price}
+              type="number"
+              onChange={(event) => setPrice(Number(event.target.value))}
+            />
+          </div>
+
+          <button
+            className="submit"
+            onClick={() => handleSubmit(name, price)}
+            disabled={!isValid}
+          >
+            Submit
+          </button>
+        </div>
+      </div>
       <ReturnIcon reference={"/"} />
-    </div>
+    </>
   );
 }
 

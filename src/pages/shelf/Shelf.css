@@ -18,5 +18,7 @@
 }
 
 .create-icon {
-  margin-left: 3rem;
+  position: relative;
+  bottom: 1rem;
+  left: 1rem;
 }

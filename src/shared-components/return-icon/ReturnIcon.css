@@ -13,4 +13,7 @@
 
 .return-icon--container{
   display: inline-block;
+  position: relative;
+  bottom: 1rem;
+  left: 1rem;
 }
