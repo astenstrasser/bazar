@@ -21,7 +21,7 @@ function Form({ handleSubmit }: FormProps): React.ReactElement {
   const [description, setDescription] = useState<string>("");
 
   useEffect(() => {
-    price > 0 && !!name ? setIsValid(true) : setIsValid(false);
+    !!price && price > 0 && !!name ? setIsValid(true) : setIsValid(false);
   }, [price, name]);
 
   return (
@@ -42,7 +42,7 @@ function Form({ handleSubmit }: FormProps): React.ReactElement {
             <label htmlFor="price">Preço *</label>
             <input
               id="price"
-              value={price}
+              value={price ? price : ""}
               type="number"
               onChange={(event) => setPrice(Number(event.target.value))}
             />

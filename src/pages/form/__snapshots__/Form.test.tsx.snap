@@ -33,7 +33,7 @@ exports[`renders snapshot 1`] = `
         <input
           id="price"
           type="number"
-          value="0"
+          value=""
         />
       </div>
       <div
