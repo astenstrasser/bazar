@@ -6,6 +6,8 @@ import { rest } from "msw";
 import { setupServer } from "msw/node";
 
 import { Product } from "../../shared-components/types";
+import GoogleAuthentication from "../../shared-components/google-authentication/GoogleAuthentication";
+import { AuthContext } from "../../App";
 
 const mockResponse: Product[] = [
   {
@@ -55,4 +57,13 @@ test("should display loading tag while fetching data", async () => {
   render(<Shelf />);
 
   expect(screen.getByText("Loading...")).toBeInTheDocument();
+});
+
+test("should render Add icon when user is logged in", () => {
+  const { getByAltText } = render(
+    <AuthContext.Provider value={{ isLoggedIn: true }}>
+      <Shelf />
+    </AuthContext.Provider>
+  );
+  expect(getByAltText("Ícone para adicionar um produto")).toBeInTheDocument();
 });
