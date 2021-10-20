@@ -13,7 +13,16 @@ import GoogleAuthentication from "./shared-components/google-authentication/Goog
 
 export interface AuthData {
   isLoggedIn: boolean;
-  user?: unknown;
+  user?: User | undefined;
+}
+
+export interface User {
+  getId(): string;
+  getEmail(): string;
+  getName(): string;
+  getGivenName(): string;
+  getFamilyName(): string;
+  getImageUrl(): string;
 }
 
 export const AuthContext = React.createContext({} as AuthData);
@@ -29,7 +38,7 @@ const App: React.FC = () => {
     }
   };
   const onLogoutSuccess = () => {
-    setAuthData({ isLoggedIn: false, user: {} });
+    setAuthData({ isLoggedIn: false, user: undefined });
   };
 
   return (

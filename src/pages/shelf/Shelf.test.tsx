@@ -6,7 +6,6 @@ import { rest } from "msw";
 import { setupServer } from "msw/node";
 
 import { Product } from "../../shared-components/types";
-import GoogleAuthentication from "../../shared-components/google-authentication/GoogleAuthentication";
 import { AuthContext } from "../../App";
 
 const mockResponse: Product[] = [

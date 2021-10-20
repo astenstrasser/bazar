@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders snapshot 1`] = `
+<div>
+  <div
+    class="item--reservation"
+  >
+    <h3>
+      Reservar
+    </h3>
+    <div>
+      <label
+        for="name"
+      >
+        Nome:
+      </label>
+      <input
+        disabled=""
+        id="name"
+        type="text"
+        value="Full Name"
+      />
+      <label
+        for="email"
+      >
+        Email:
+      </label>
+      <input
+        disabled=""
+        id="email"
+        type="text"
+        value="email@example.com"
+      />
+      <div>
+        <label
+          for="comment"
+        >
+          Comentário:
+        </label>
+        <textarea
+          id="comment"
+        />
+      </div>
+      <button>
+        Reservar
+      </button>
+    </div>
+  </div>
+</div>
+`;

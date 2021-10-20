@@ -37,6 +37,16 @@ exports[`renders product 1`] = `
         </div>
       </div>
     </div>
+    <div
+      class="item--reservation"
+    >
+      <h3>
+        Reservar
+      </h3>
+      <p>
+         Você precisa estar logado para reservar um item!
+      </p>
+    </div>
   </div>
   <div
     class="return-icon--container"
