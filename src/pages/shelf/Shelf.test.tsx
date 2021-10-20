@@ -6,7 +6,6 @@ import { rest } from "msw";
 import { setupServer } from "msw/node";
 
 import { Product } from "../../shared-components/types";
-import { GApiProvider } from "react-gapi-auth2";
 
 const mockResponse: Product[] = [
   {
@@ -33,20 +32,12 @@ afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
 test("renders snapshot", () => {
-  const { container } = render(
-    <GApiProvider clientConfig={{ client_id: "" }}>
-      <Shelf />
-    </GApiProvider>
-  );
+  const { container } = render(<Shelf />);
   expect(container).toMatchSnapshot();
 });
 
 test("renders data", async () => {
-  const { container } = render(
-    <GApiProvider clientConfig={{ client_id: "" }}>
-      <Shelf />
-    </GApiProvider>
-  );
+  const { container } = render(<Shelf />);
 
   await waitFor(() => screen.getAllByRole("heading"));
 
@@ -61,11 +52,7 @@ test("should display loading tag while fetching data", async () => {
       }, 10);
     })
   );
-  render(
-    <GApiProvider clientConfig={{ client_id: "" }}>
-      <Shelf />
-    </GApiProvider>
-  );
+  render(<Shelf />);
 
   expect(screen.getByText("Loading...")).toBeInTheDocument();
 });

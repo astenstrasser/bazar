@@ -4,7 +4,6 @@ import Details from "./Details";
 import { setupServer } from "msw/node";
 import { rest } from "msw";
 import { Product } from "../../shared-components/types";
-import { GApiProvider } from "react-gapi-auth2";
 
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
@@ -33,20 +32,12 @@ afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
 test("renders snapshot while loading", () => {
-  const { container } = render(
-    <GApiProvider clientConfig={{ client_id: "" }}>
-      <Details />
-    </GApiProvider>
-  );
+  const { container } = render(<Details />);
   expect(container).toMatchSnapshot();
 });
 
 test("renders product", async () => {
-  const { container } = render(
-    <GApiProvider clientConfig={{ client_id: "" }}>
-      <Details />
-    </GApiProvider>
-  );
+  const { container } = render(<Details />);
 
   await waitFor(() => screen.getAllByRole("heading"));
 
