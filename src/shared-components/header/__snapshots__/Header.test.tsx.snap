@@ -14,13 +14,6 @@ exports[`renders snapshot 1`] = `
         src="logo.png"
       />
     </a>
-    <div
-      class="google-login"
-    >
-      <div
-        class="google-login"
-      />
-    </div>
   </div>
 </div>
 `;

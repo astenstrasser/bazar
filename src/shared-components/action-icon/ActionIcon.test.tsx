@@ -5,6 +5,7 @@ import { Icon } from "../types";
 
 test("renders snapshot", () => {
   const { container } = render(
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     <ActionIcon onClick={() => {}} alt={"alt"} type={Icon.LeftArrow} />
   );
   expect(container).toMatchSnapshot();

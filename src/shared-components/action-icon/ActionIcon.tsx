@@ -2,8 +2,6 @@ import React from "react";
 import { Icon } from "../types";
 import "./ActionIcon.css";
 import LeftArrow from "../../assets/left-arrow.svg";
-import LoginIcon from "../../assets/login-icon.svg";
-import LogoutIcon from "../../assets/logout-icon.svg";
 import PlusIcon from "../../assets/plus.svg";
 
 function ActionIcon(props: {
@@ -17,10 +15,6 @@ function ActionIcon(props: {
         return LeftArrow;
       case Icon.Plus:
         return PlusIcon;
-      case Icon.Login:
-        return LoginIcon;
-      case Icon.Logout:
-        return LogoutIcon;
     }
   }
   return (

@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useGoogleAuth } from "react-gapi-auth2";
+import React, { useContext, useEffect, useState } from "react";
 import "./Shelf.css";
 import ShelfItem from "./shelf-item/ShelfItem";
 import { Icon, Product } from "../../shared-components/types";
@@ -7,12 +6,13 @@ import LoadingTag from "../../shared-components/loading-tag/LoadingTag";
 import ActionIcon from "../../shared-components/action-icon/ActionIcon";
 import { fetchAllProducts } from "../../api/api";
 import { useHistory } from "react-router-dom";
+import { AuthContext } from "../../App";
 
 const Shelf: React.FC = () => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const { googleAuth } = useGoogleAuth();
+  const { isLoggedIn } = useContext(AuthContext);
   const history = useHistory();
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const Shelf: React.FC = () => {
             <ShelfItem key={product._id} {...product} />
           ))}
       </div>
-      {googleAuth?.isSignedIn.get() && (
+      {isLoggedIn && (
         <div className="create-icon">
           <ActionIcon
             onClick={() => {

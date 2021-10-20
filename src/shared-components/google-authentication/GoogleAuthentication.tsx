@@ -1,31 +1,49 @@
-import React from "react";
-import { useGoogleAuth } from "react-gapi-auth2";
-import ActionIcon from "../action-icon/ActionIcon";
-import { Icon } from "../types";
+import React, { useContext } from "react";
+import GoogleLogin, {
+  GoogleLoginResponse,
+  GoogleLoginResponseOffline,
+  GoogleLogout,
+} from "react-google-login";
+import { AuthContext } from "../../App";
 
-function GoogleAuthentication(): React.ReactElement {
-  const { googleAuth } = useGoogleAuth();
+import "./GoogleAuthentication.css";
 
-  const handleSignOut = () => {
-    googleAuth?.signOut();
-    alert("Deslogado com sucesso!");
+interface AuthProps {
+  onLoginSuccess: (
+    response: GoogleLoginResponse | GoogleLoginResponseOffline
+  ) => void;
+  onLogoutSuccess: () => void;
+}
+
+function GoogleAuthentication({
+  onLoginSuccess,
+  onLogoutSuccess,
+}: AuthProps): React.ReactElement {
+  const { isLoggedIn } = useContext(AuthContext);
+  const client_id = process.env.REACT_APP_CLIENT_ID || "";
+
+  const onFailure = () => {
+    console.log("fail");
   };
 
   return (
     <div className="google-login">
-      {googleAuth?.isSignedIn.get() == false && (
-        <ActionIcon
-          onClick={() => googleAuth?.signIn()}
-          type={Icon.Login}
-          alt={"Ícone para logar na aplicação"}
+      {!isLoggedIn && (
+        <GoogleLogin
+          clientId={client_id}
+          buttonText="Login"
+          onSuccess={onLoginSuccess}
+          onFailure={onFailure}
+          cookiePolicy={"single_host_origin"}
+          isSignedIn={true}
         />
       )}
-
-      {googleAuth?.isSignedIn.get() && (
-        <ActionIcon
-          onClick={handleSignOut}
-          type={Icon.Logout}
-          alt={"Ícone para deslogar da aplicação"}
+      {isLoggedIn && (
+        <GoogleLogout
+          clientId={client_id}
+          buttonText="Logout"
+          onFailure={onFailure}
+          onLogoutSuccess={onLogoutSuccess}
         />
       )}
     </div>
